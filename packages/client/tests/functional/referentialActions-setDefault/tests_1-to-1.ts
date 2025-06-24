@@ -161,6 +161,8 @@ testMatrix.setupTestSuite(
                   'Foreign key constraint violated on the constraint: `ProfileOneToOne_userId_fkey`',
                 [AdapterProviders.JS_PG]:
                   'Foreign key constraint violated on the constraint: `ProfileOneToOne_userId_fkey`',
+                [AdapterProviders.JS_PG_COCKROACH]:
+                  'Foreign key constraint violated on the constraint: `ProfileOneToOne_userId_fkey`',
                 [AdapterProviders.JS_MSSQL]:
                   'Foreign key constraint violated on the constraint: `ProfileOneToOne_userId_fkey`',
               },
@@ -243,6 +245,8 @@ testMatrix.setupTestSuite(
                 [AdapterProviders.JS_NEON]:
                   'Foreign key constraint violated on the constraint: `ProfileOneToOne_userId_fkey`',
                 [AdapterProviders.JS_PG]:
+                  'Foreign key constraint violated on the constraint: `ProfileOneToOne_userId_fkey`',
+                [AdapterProviders.JS_PG_COCKROACH]:
                   'Foreign key constraint violated on the constraint: `ProfileOneToOne_userId_fkey`',
                 [AdapterProviders.JS_MSSQL]:
                   'Foreign key constraint violated on the constraint: `ProfileOneToOne_userId_fkey`',

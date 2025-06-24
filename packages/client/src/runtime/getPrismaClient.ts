@@ -302,7 +302,12 @@ export function getPrismaClient(config: GetPrismaClientConfig) {
         //    see https://github.com/prisma/prisma-engines/blob/d116c37d7d27aee74fdd840fc85ab2b45407e5ce/query-engine/driver-adapters/src/types.rs#L22-L23.
         //
         // TODO: Normalize these provider names once and for all in Prisma 6.
-        const normalizedActiveProvider = config.activeProvider === 'postgresql' ? 'postgres' : config.activeProvider
+        const normalizedActiveProvider =
+          config.activeProvider === 'postgresql'
+            ? 'postgres'
+            : config.activeProvider === 'cockroachdb'
+            ? 'postgres'
+            : config.activeProvider
 
         if (adapter.provider !== normalizedActiveProvider) {
           throw new PrismaClientInitializationError(

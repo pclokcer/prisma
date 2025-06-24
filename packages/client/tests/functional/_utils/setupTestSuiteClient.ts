@@ -227,6 +227,17 @@ export function setupTestSuiteClientDriverAdapter({
     }
   }
 
+  if (driverAdapter === AdapterProviders.JS_PG_COCKROACH) {
+    const { PrismaPg } = require('@prisma/adapter-pg') as typeof import('@prisma/adapter-pg')
+
+    return {
+      adapter: new PrismaPg({
+        connectionString: datasourceInfo.databaseUrl,
+      }),
+      __internal,
+    }
+  }
+
   if (driverAdapter === AdapterProviders.JS_NEON) {
     const { neonConfig } = require('@neondatabase/serverless') as typeof import('@neondatabase/serverless')
     const { PrismaNeon } = require('@prisma/adapter-neon') as typeof import('@prisma/adapter-neon')
